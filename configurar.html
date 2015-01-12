@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Configuración Cronometro</title>
+<link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon" />
+<meta name="description" content="Cronometro descontador configurable" />
+<meta name="keywords" content="Cronometro, Temporizador, Contador" />
+
+<meta name="author" content="Ronald Franz Nina Layme" />
+<link href="css/estilo.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="js/jquery.js"></script>
+<script language="javascript" src="js/script.js"></script>
+<script language="javascript">
+$(document).on("ready",function(){
+	$("#asignar").click(function(e) {
+		var horas=$("#horas").val();
+		var minutos=$("#minutos").val();
+		var segundos=$("#segundos").val();
+		if(horas<10){horast='0'+horas;}else{horast=horas}
+		if(minutos<10){minutost='0'+minutos;}else{minutost=minutos}
+		if(segundos<10){segundost='0'+segundos;}else{segundost=segundos}
+        opener.document.reloj.horas.value=horast;
+		opener.document.reloj.minutos.value=minutost;
+		opener.document.reloj.segundos.value=segundost;
+		
+    });	
+	$("#iniciar").click(function(e) {
+		opener.iniciar();
+	});	
+	$("#detener").click(function(e) {
+		opener.parar();
+	});	
+});
+</script>
+</head>
+<body>
+<h2>Configuración</h2>
+<div id="configuracionreloj">
+<input type="number" name="horas" id="horas" value="0" class="der">:<input type="number" name="minutos" id="minutos" value="0" class="der" autofocus>:<input type="number" name="segundos" id="segundos" value="0" class="der">
+</div>
+<div id="cuadroconfigurar">
+<input type="button" value="Asignar Hora" id="asignar">
+
+<input type="button" value="Iniciar Cronometro" id="iniciar">
+<input type="button" value="Detener Cronometro" id="detener">
+</div>
+<div id="copy">Desarrollado por Ronald Nina Layme</div>
+</body>
+</html>

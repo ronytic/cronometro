@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cronómetro</title>
+
+<link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon" />
+<meta name="description" content="Cronometro descontador configurable" />
+<meta name="keywords" content="Cronometro, Temporizador, Contador" />
+
+<meta name="author" content="Ronald Franz Nina Layme" />
+<link href="css/estilo.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="js/jquery.js"></script>
+<script language="javascript" src="js/script.js"></script>
+<script language="javascript">
+$(document).on("ready",function(){
+iniciar();
+});
+var horas=0;
+var minutos=0;
+var segundos=0;
+var sw=0;
+function iniciar(){
+	horas=parseInt($("#horas").val());
+	minutos=parseInt($("#minutos").val());
+	segundos=parseInt($("#segundos").val());
+	sw=1;
+	setTimeout("descontar()",1000);
+	
+}
+function parar(){
+	sw=0;
+}
+function descontar(){
+	
+	if(segundos==0){
+		segundos=59;
+		if(minutos==0){
+			
+			minutos=59;
+			if(horas==0){
+				sw=0;
+				horas=0;
+				minutos=0;
+				segundos=0;
+			}else{
+				horas--;
+			}
+		}else{
+			minutos--;	
+		}
+		
+	}else{
+		segundos--;	 
+	}
+	if(horas<10){horast='0'+horas;}else{horast=horas}
+	if(minutos<10){minutost='0'+minutos;}else{minutost=minutos}
+	if(segundos<10){segundost='0'+segundos;}else{segundost=segundos}
+
+	//alert(segundost);
+	$("#horas").val(horast);
+	$("#minutos").val(minutost);
+	$("#segundos").val(segundost);
+	
+	if(sw==1){
+		setTimeout("descontar()",200);
+	}
+}
+</script>
+</head>
+<body>
+<form name="reloj">
+
+<div id="reloj">
+<input type="text" name="horas" id="horas" value="00" class="centrar caja" readonly>:<input type="text" name="minutos" id="minutos" value="01" class="centrar caja" readonly>:<input type="text" name="segundos" id="segundos" value="00" class="centrar caja" readonly>
+</div>
+</form>
+<div id="cuadroconfigurar">
+<button id="configurar"><img src="imagenes/icon-gadget.png"></button>
+</div>
+<div id="copy">Desarrollado por Ronald Nina Layme</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* CSS Document */
+body{
+	background-image:url(../imagenes/background_postits.jpg);
+	background-image:url(../imagenes/cielo.jpg);	
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.der{
+	text-align:right;	
+}
+.centrar{
+	text-align:center;	
+}
+#reloj,#configuracionreloj{
+	position:relative;
+
+	margin:150px auto;
+	width:700px;
+	margin-bottom:0px;
+	text-align:center;
+	font-size:150px;
+	border:#D0D0D0 1px solid;
+	padding:50px 20px 50px 20px;
+	vertical-align:middle;
+	background-color:#FFFFFF;
+	border:#E5E5E5 10px solid;
+	color: #4ec6ea;
+	text-shadow: 1px 1px 1px #40a6c4;
+}
+#configuracionreloj{
+	margin-top:10px;	
+}
+#reloj input,#configuracionreloj input{
+	padding:5px;
+	font-weight:bold;
+	width:170px;
+	font-size:150px;
+	border:#FFFFFF 0px solid;	
+	vertical-align:middle;
+	background-color:transparent;
+	color: #4ec6ea;
+	text-shadow: 1px 1px 1px #40a6c4;
+}
+#configuracionreloj input{
+		border:#a5c7fe 1px solid;
+}
+#cuadroconfigurar{
+	position:absolute;
+	bottom:5px;
+	left:5px;	
+}
+#cuadroconfigurar button,#cuadroconfigurar input{
+	border:#E5E5E5 5px solid;
+	background-color:#E5E5E5;
+	padding:10px;
+	color:#848484;	
+	font-weight:bold;
+
+}
+#cuadroconfigurar button img{
+	width:30px;
+	height:30px;
+}
+#copy{
+	position:absolute;
+	bottom:5px;
+	right:5px;	
+	color:rgba(255,255,255,0.75);
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	text-transform:uppercase;
+	text-shadow: 1px 1px 1px #40a6c4;
+}
+h2{
+	text-align:center;
+	text-transform:uppercase;
+	color:rgba(255,255,255,1);
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	text-transform:uppercase;
+	text-shadow: 1px 1px 1px #3899B5;	
+}
